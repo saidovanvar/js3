@@ -12,13 +12,13 @@ function main(result) {
         console.log(item)
         let li = document.createElement("li")
         li.innerHTML = `
-<a href="2vazifa.html">
-
+<div style="width: 200px; height: 100px; background-color: chartreuse; padding: 10px; text-align: center">
 <p> ${item.id}</p>
 <p>${item.title}</p>
+</div>
 
 </a>
-
+<div>
 
 `
 

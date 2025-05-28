@@ -8,14 +8,15 @@ fetch('https://fakerestapi.azurewebsites.net/api/v1/Users').then(res => res.json
 function main(result) {
 
 
-    result.forEach(item => {
-        console.log(item)
+    result.forEach(User => {
+        console.log(User)
         let li = document.createElement("li")
         li.innerHTML = `
-<a href="2vazifa.html">
-
-<p> ${item.id}</p>
-<p>${item.password}</p>
+<a href="5.html">
+<div style="width: 200px; height: 100px; background-color: chartreuse; padding: 10px; text-align: center">
+<p> ${User.id}</p>
+<p>${User.password}</p>
+</div>
 
 </a>
 

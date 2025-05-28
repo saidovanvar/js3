@@ -8,14 +8,16 @@ fetch('https://fakerestapi.azurewebsites.net/api/v1/Books').then(res => res.json
 function main(result) {
 
 
-    result.forEach(item => {
-        console.log(item)
+    result.forEach(Books => {
+        console.log(Books)
         let li = document.createElement("li")
         li.innerHTML = `
-<a href="2vazifa.html">
+<a href="3.html">
+<div style="width: 200px; height: 100px; background-color: chartreuse; padding: 10px; text-align: center">
+<p> ${Books.id}</p>
+<p>${Books.title}</p>
+</div>
 
-<p> ${item.id}</p>
-<p>${item.title}</p>
 
 </a>
 

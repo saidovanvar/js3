@@ -8,14 +8,15 @@ fetch('https://fakerestapi.azurewebsites.net/api/v1/CoverPhotos').then(res => re
 function main(result) {
 
 
-    result.forEach(item => {
-        console.log(item)
+    result.forEach(CoverPhotos => {
+        console.log(CoverPhotos)
         let li = document.createElement("li")
         li.innerHTML = `
-<a href="2vazifa.html">
-
-<p> ${item.id}</p>
-<p>${item.url}</p>
+<a href="4.html">
+<div style="width: 200px; height: 100px; background-color: chartreuse; padding: 10px; text-align: center">
+<p> ${CoverPhotos.id}</p>
+<p>${CoverPhotos.url}</p>
+</div>
 
 </a>
 
