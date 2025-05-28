@@ -1,0 +1,1 @@
+fetch(`https://fakerestapi.azurewebsites.net/api/v1/Activities`).then(res => res.json()).then(data => {})
