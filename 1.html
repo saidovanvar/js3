@@ -6,48 +6,34 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #3498db;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            padding: 20px;
-        }
-       a{
-           text-decoration: none;
-           background-color: #e74c3c;
-           padding: 20px;
-           border-radius: 200%;
-       }
-       ul{
-           list-style: none;
-           display: grid;
-           grid-template-columns: 1fr 1fr 1fr 1fr;
-           gap : 10px;
-       }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<header>
-    <nav>
-        <a href="1.html">1</a>
-        <a href="2.html " target="_blank">2</a>
-        <a href="3.html " target="_blank">3</a>
-        <a href="4.html " target="_blank">4</a>
-        <a href="5.html " target="_blank">5</a>
+<body class="bg-gray-100 p-6">
+<div class="max-w-[1280] mx-auto p-4">
+    <input class="w-full px-4 py-2 border border-black-300 mb-10" id="searchInput" type="text" placeholder="Search Products...">
+    <nav class="mb-12">
+        <div class="flex flex-wrap gap-8 justify-center" id="filterButtons">
+            <button class="filter-btn text-sm uppercase tracking-wide text-gray-500" data-category="all">
+                All
+            </button>
+            <button class="filter-btn text-sm uppercase tracking-wide text-gray-500" data-category="smartphones">
+                smartphones
+            </button>
+            <button class="filter-btn text-sm uppercase tracking-wide text-gray-500" data-category="laptops">
+                laptops
+            </button>
+            <button class="filter-btn text-sm uppercase tracking-wide text-gray-500" data-category="accessories">
+                accessories
+            </button>
+            <button class="filter-btn text-sm uppercase tracking-wide text-gray-500" data-category="audio">
+                audio
+            </button>
+        </div>
     </nav>
-</header>
-<ul class="list"></ul>
+    <div id="box" class="grid grid-cols-4 gap-4"></div>
+</div>
 
-<script  src="1.js"></script>
+
+<script type="module" src="2.js"></script>
 </body>
 </html>
