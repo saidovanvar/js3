@@ -10,6 +10,40 @@
 </head>
 <body class="bg-gray-100 p-6">
 <div class="max-w-[1280] mx-auto p-4">
+    <div class="bg-blue-100 border border-blue-300 rounded-lg p-4 mb-6">
+        <div class="flex items-center justify-between">
+            <span class="text-lg font-medium"> Cart: <span id="cartCount">0</span> items</span>
+            <button id="viewCartBtn" class="bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                View Cart
+            </button>
+        </div>
+    </div>
+
+
+    <div id="cartModel" class="fixed inset-0 bg-black bg-opacity-80 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white overflow-y-auto max-w-2xl w-full max-h-[80vh]  rounded-lg">
+                <div class="p-6 border-b">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold">Shopping Cart</h2>
+                        <button id="closeCartBtn" class="text-gray-600 hover:text-gray-800 text-2xl">&times;</button>
+                    </div>
+                </div>
+                <div id="cartItems" class="p-6">
+
+                </div>
+                <div class="p-6 border-t bg-gray-50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xl font-bod">Total: $ <span id="cartTotal">0</span></span>
+                        <button class="bg-green-100 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors">
+                            Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <input class="w-full px-4 py-2 border border-black-300 mb-10" id="searchInput" type="text" placeholder="Search Products...">
     <nav class="mb-12">
         <div class="flex flex-wrap gap-8 justify-center" id="filterButtons">
