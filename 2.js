@@ -101,7 +101,7 @@ function cartModalRender() {
     let cartTotal = document.querySelector("#cartTotal");
     let total = 0
     cart.forEach((item) => {
-        let itemtotal = item.quantity * item.quantity
+        let itemtotal = item.price * item.quantity
         total += itemtotal
 
         let div = document.createElement("div")
@@ -113,11 +113,47 @@ function cartModalRender() {
 </div>
 <div class="items-start font-bold text-gray-400 text-2xl">
 <p>${item.description}</p>
-   <span class="font-bold mt-2 text-blue-900">$${item.price}</span>
+   <span class="font-bold mt-5 text-blue-900">$${item.price}</span>
+   <div class="flex items-center gap-2 mt-5">
+   <button id="btn-menus" class="bg-red-600 hover:bg-red-500 w-10 rounded-lg">-</button>
+   <input id="inp" class="border border-[3px] rounded-lg w-[140px]" type="text">
+   <button id="btn-plus" class="bg-blue-600 hover:bg-blue-500 w-10 rounded-lg">+</button>
+</div>
 </div>
 </div>
         
         `
+        let btn_plus = div.querySelector("#btn-plus");
+        let inp = div.querySelector("#inp");
+        let btn_menus = div.querySelector("#btn-menus");
+
+        inp.value = item.quantity;
+
+        btn_plus.addEventListener("click", e => {
+            item.quantity++;
+            total += item.price;
+            inp.value = item.quantity;
+            let a = item.price * item.quantity
+            total += a
+            let itemtotal = item.price * item.quantity
+            total += itemtotal
+        });
+
+
+        btn_menus.addEventListener("click", e => {
+            if (item.quantity > 1) {
+                item.quantity--;
+                total -= item.price;
+                inp.value = item.quantity;
+                let b = item.price * item.quantity
+                total -= b
+                let itemtotal = item.price / item.quantity
+                total -= itemtotal
+            }
+        });
+
+
+
         cartItems.appendChild(div)
     })
     cartTotal.textContent = total
